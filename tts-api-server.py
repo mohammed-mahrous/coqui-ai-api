@@ -16,7 +16,7 @@ def text_to_speech():
     end = time.time()
     elapsed = end - start 
     print('elapsed: {}'.format(elapsed))
-    f = tempfile.NamedTemporaryFile(prefix='.wav')
+    f = tempfile.NamedTemporaryFile(suffix='.wav')
     f.write(data)
     response = send_file(f.name, as_attachment=True, download_name='data.wav', mimetype='.wav')
     f.close()
