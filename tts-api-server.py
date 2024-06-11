@@ -15,6 +15,7 @@ def text_to_speech():
     data = service.text_to_speech(text)
     f = tempfile.NamedTemporaryFile(suffix='.wav')
     f.write(data)
+    print('file path: {}'.format(f.name))
     end = time.time()
     elapsed = end - start 
     print('elapsed: {}'.format(elapsed))
