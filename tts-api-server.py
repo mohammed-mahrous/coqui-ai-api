@@ -2,7 +2,7 @@ from flask import Flask , request , send_file
 from TTSService import TTSService
 import time, tempfile
 
-HOST = 'localhost'
+HOST = '10.105.173.241'
 PORT = 5000
 
 app = Flask(__name__)
