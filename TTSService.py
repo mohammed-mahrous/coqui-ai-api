@@ -31,7 +31,7 @@ class TTSService:
     def text_to_speech(self,text:str) -> bytes:
         
         with tempfile.NamedTemporaryFile(suffix='.wav') as tf:
-            self.tts.tts_to_file(text=text,language=language,speaker_wav=speaker_wav,file_path=tf.name,sample_rate=16000)
+            self.tts.tts_to_file(text=text,language=language,speaker_wav=speaker_wav,file_path=tf.name,kwargs={'sample_rate': 16000})
             buffer = tf.read()
             return buffer
         
