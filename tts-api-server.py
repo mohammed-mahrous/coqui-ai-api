@@ -13,7 +13,7 @@ def text_to_speech():
     text = json['text']
     start = time.time()
     data = service.text_to_speech(text)
-    f = tempfile.NamedTemporaryFile(suffix='.wav')
+    f = tempfile.NamedTemporaryFile(suffix='.wav', delete=False)
     f.write(data)
     print('file path: {}'.format(f.name))
     end = time.time()
